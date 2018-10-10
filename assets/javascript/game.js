@@ -7,8 +7,8 @@ var targetNumber = Math.floor((Math.random() * 100) + 19);
 $("#number-to-guess").text(targetNumber);
 
 var counter = 0;
-var wins = 0
-var losses = 0
+var wins = 0;
+var losses = 0;
 
 //Creates random number for the Gem Values
 var numberOptions = function() {
@@ -18,7 +18,7 @@ var randoms = Array(4).fill(0).map(numberOptions);
     console.log(randoms);
 
 // Array for Gem Photos
-var gem = ["assets/images/PurpleGem.png", "assets/images/RedGem.png", "assets/images/SkyBlueGem.png", "assets/images/YellowGem.png"];
+var gem = ["assets/images/PurpleGem.png", "assets/images/RedGem.png", "assets/images/SkyBlueGem.png", "assets/images/YellowGem.png", "assets/images/BlueGem.png", "assets/images/PinkGem.png", "assets/images/GreenGem.png"];
 
 
 // ?? Maybe Generate Random Gem Photo in For Loop ??
@@ -27,8 +27,9 @@ var gem = ["assets/images/PurpleGem.png", "assets/images/RedGem.png", "assets/im
 // Loop to add different gem photo on page, assign random value
 for (var i = 0; i < randoms.length; i++) {
     var imageCrystal = $("<img>");
+    var randomIndex = Math.floor(Math.random() * gem.length);
     imageCrystal.addClass("crystal-image");
-    imageCrystal.attr("src", gem[i]);
+    imageCrystal.attr("src", gem[randomIndex]);
     imageCrystal.attr("data-crystalvalue", randoms[i]);
     $("#crystals").append(imageCrystal);
 }
@@ -43,15 +44,20 @@ for (var i = 0; i < randoms.length; i++) {
         //alert("New score: " + counter);
 
         if (counter === targetNumber) {
+            alert("You Win");
             wins++;
+            $(".wins").html(wins);
+
         } 
         
         else if (counter > targetNumber) {
+            alert("You lose");
             losses++;
+            $(".losses").html(losses);
         }
     });
 
-$(".wins").html(wins);
-$(".losses").html(losses);
+    $(".wins").html(wins);
+    $(".losses").html(losses)
 
 });    
