@@ -31,9 +31,31 @@ for (var i = 0; i < randoms.length; i++) {
     $("#crystals").append(imageCrystal);
 }
 
+function randomizeCrystal() {
+    for (var i = 0; i < 4; i++) {
+        randomIndex = Math.floor(Math.random() * gem.length);
+        $(".crystal-image").attr("src", gem[i]);
+    }
+};
+
+function randomizeValues() {
+    for (var i = 0; i < 4; i++) {
+        var randoms = Array(4).fill(0).map(numberOptions);
+    console.log(randoms);
+        data-crystalvalue.attr(randoms[i]);
+    }
+}
+
 function reset() {
     counter = 0;
     $("#total-guessed").html(counter);
+    targetNumber = Math.floor((Math.random() * 100) + 19);
+    $("#number-to-guess").text(targetNumber);
+    randomizeCrystal();
+    randomizeValues();
+    //randoms = Array(4).fill(0).map(numberOptions);
+    //console.log(randoms);
+    //$(".crystal-image").attr("data-crystalvalue", randoms[i]);
 }
 
 
