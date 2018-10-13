@@ -8,11 +8,9 @@ var losses = 0;
 var gem = ["assets/images/PurpleGem.png", "assets/images/RedGem.png", "assets/images/SkyBlueGem.png", "assets/images/YellowGem.png", "assets/images/BlueGem.png", "assets/images/PinkGem.png", "assets/images/GreenGem.png"];
 
 
-
-
 //Creates random number for the Gem Values
 var numberOptions = function() {
-    return Math.floor(Math.random() * 12);
+    return Math.floor(Math.random() * 12 + 1);
 }
 var randomGemValue = Array(4).fill(0).map(numberOptions);
     console.log(randomGemValue);
@@ -27,30 +25,19 @@ for (var i = 0; i < randomGemValue.length; i++) {
     $("#crystals").append(imageCrystal);
 }
 
-// function randomizeCrystal() {
-//     for (var i = 0; i < 4; i++) {
-//         randomIndex = Math.floor(Math.random() * gem.length);
-//         // console.log(gem.length);
-//         $(".crystal-image").attr("src", gem[randomIndex]);
-//     }
-// };
-
-// function randomizeValues() {
-//     for (var i = 0; i < 4; i++) {
-//         var randomGemValue = Array(4).fill(0).map(numberOptions);
-//         data-crystalvalue.attr(randomGemValue[i]);
-//     }
-// }
-
 function reset() {
     counter = 0;
     $("#total-guessed").html(counter);
-    targetNumber = Math.floor((Math.random() * 100) + 19);
+    targetNumber = Math.floor(Math.random() * 100) + 19;
     $("#number-to-guess").text(targetNumber);
-    //randomizeValues();
-    //randoms = Array(4).fill(0).map(numberOptions);
-    //console.log(randoms);
-    //$(".crystal-image").attr("data-crystalvalue", randoms[i]);
+    var numberOptions = function() {
+        return Math.floor(Math.random() * 12) + 1;
+    }
+    var randomGemValue = Array(4).fill(0).map(numberOptions);
+    $(".crystal-image").each(function() {
+        $(this).attr("data-crystalvalue", randomGemValue[Math.floor(Math.random() * gem.length)]);
+        $(this).attr("src", gem[Math.floor(Math.random() * gem.length)]);
+    });
 }
 
 
@@ -63,14 +50,12 @@ function reset() {
         //alert("New score: " + counter);
 
         if (counter === targetNumber) {
-            alert("You Win");
             wins++;
             $("#wins").html(wins);
             reset();
         } 
         
         else if (counter > targetNumber) {
-            alert("You lose");
             losses++;
             $("#losses").html(losses);
             reset();
