@@ -24,7 +24,6 @@ for (var i = 0; i < randomGemValue.length; i++) {
     imageCrystal.addClass("crystal-image");
     imageCrystal.attr("src", gem[randomIndex]);
     imageCrystal.attr("data-crystalvalue", randomGemValue[i]);
-    imageCrystal.attr("data-gemnumber", i);
     $("#crystals").append(imageCrystal);
 }
 
@@ -48,9 +47,6 @@ function reset() {
     $("#total-guessed").html(counter);
     targetNumber = Math.floor((Math.random() * 100) + 19);
     $("#number-to-guess").text(targetNumber);
-        for (var i = 0; i < 4; i++) {
-            $(".crystal-image").attr("src", gem[Math.floor(Math.random() * gem.length)]);
-        }
     //randomizeValues();
     //randoms = Array(4).fill(0).map(numberOptions);
     //console.log(randoms);
