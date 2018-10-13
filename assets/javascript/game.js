@@ -10,7 +10,7 @@ var gem = ["assets/images/PurpleGem.png", "assets/images/RedGem.png", "assets/im
 
 //Creates random number for the Gem Values
 var numberOptions = function() {
-    return Math.floor(Math.random() * 12 + 1);
+    return Math.floor(Math.random() * 12) + 1;
 }
 var randomGemValue = Array(4).fill(0).map(numberOptions);
     console.log(randomGemValue);
