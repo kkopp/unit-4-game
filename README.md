@@ -10,4 +10,4 @@ The game is won when the total guessed matches the random number that was genera
 IMPORTANT! The value of each crystal is unknown until it is clicked and the value of each crystal will change when the game is either won or lost.
 
 ## Screenshot
-[screenshot](/assets/images/gamedemo.png)
+![screenshot](/assets/images/gamedemo.png)
