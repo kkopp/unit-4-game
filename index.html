@@ -3,49 +3,73 @@
 
 <head>
     <meta charset="UTF-8">
-        <title>Crystals Collector!</title>
+        <title>Crystal Collector!</title>
 
-        <script
-        src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
         <link href="https://fonts.googleapis.com/css?family=Arsenal|Fredericka+the+Great" rel="stylesheet">
-        <link rel="stylesheet" href="assets/css/reset.css" type="text/css" />
         <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="assets/javascript/game.js" type="text/javascript"></script>
 
 </head>
 
 <body>
 
-    <h1>Crystals Collector!</h1>
-
-<section class="container">
-
-<div class="instructions clearfix">
-    <p>You will be given a random number at the start of the game.</p>
-
-    <p>There are four crystals below.  By click on a crystal, you will add a specific amount of points to your total score.</p>
-
-    <p>You win the game by matching your total score to the random number.  You lose the game if your total score goes above the random number.</p>
-
-    <p>The value of each crystal is hidden from you until you click on it.</p>
-
-    <p>Each time, when the game starts, the game will change the value of the crystals.
-    </p>
-    <div id="guessBox"><h2>Number to guess: <span id="number-to-guess"></span></h2></div>
-
-
+<div class="row">
+    <div class="col-md-12"></div>
+        <div class="card mx-auto">
+            <div class="card-body">
+                <h1 class="display-4">Crystal Collector!</h1>
+            </div>
+        </div>
+    </div>
 </div>
+<div class="container-fluid">
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <h5 class="card-title">Game Instructions</h5>
+            <p class="card-text"><p>A random number to be guessed will be generated at the beginning of each game.</p>
 
-<div class="gameContents">
+            <p>There are four randomly chosen crystals. When the crystal is clicked, a specific amount of points will be added to the total guessed.</p>
+        
+            <p>The game is won when the total guessed matches the random number that was generated at the beginning of the game. The game is lost when the total guessed goes over the random number.</p>
+        
+            <p><strong>IMPORTANT!</strong> The value of each crystal is unknown until it is clicked and the value of each crystal will change when the game is either won or lost.</p>
+        </div>
+    </div>
 
-<div id="crystals"></div>
-<div>Total Guessed: <span id="total-guessed"></span></div>
-<div>Wins: <span id="wins"></span></div>
-<div>Losses: <span id="losses"></span></div>
+    <div class="col-md-6">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <h5 class="card-title">Crystals</h5>
+                        <div id="crystals"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <h5 class="card-title">Score</h5>
+                        <div id="winBox">Wins: <span id="wins"></span></div>
+                        <div id="lossBox">Losses: <span id="losses"></span></div>
+                </div>
+            </div>
+
+                <div class="col-md-8">
+                    <div class="card">
+                            <div id="guessBox"><h2>Number to guess: <span id="number-to-guess"></span></h2></div>
+                            <div id="totalBox">Total Guessed: <span id="total-guessed"></span></div>
+                    </div>
+                </div>
+
+            </div>  
+        </div>   
+    </div> 
 </div>
-</section>
-
 </body>
 </html>
